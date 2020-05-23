@@ -21,8 +21,8 @@ const app = express();
 // CORS MIDDLEWARE SETUP
 app.use(
   cors({
+    origin: "http://localhost:3000",
     credentials: true,
-    origin: ["localhost:3000"],
   })
 );
 //Middleware
@@ -35,7 +35,7 @@ app.get("/history", async (req, res) => {
     const historyArr = await History.find();
     res.json(historyArr);
   } catch (error) {
-    console.log(err); //TODO: Better error handling
+    console.log("error in GET", err); //TODO: Better error handling
   }
 });
 
@@ -50,14 +50,14 @@ app.post("/history", async (req, res) => {
     });
     res.status(200).json();
   } catch (error) {
-    console.log(error);
+    console.log("error in POST", error);
   }
 });
 
 // 404
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
-  console.log("err");
+  console.log("404 not found");
   res.status(404).json({ code: "not found" });
 });
 
