@@ -27,15 +27,16 @@ History
 
 ```
 {
-    title: [{ type: String, required: true }],
-    videoId: [{ type: String, required: true, unique: true }],
-    author: [{ type: String, required: true, unique: true }],
+  title: { type: String, required: true },
+  videoId: { type: String, required: true, unique: true },
+  author: { type: String, required: true },
 }
+
 ```
 
 ### Routes
 
-| METHOD | ROUTE    | Description                          | REQUEST-BODY  |
-| ------ | -------- | ------------------------------------ | ------------- |
-| GET    | /history | Retrieve history of watched videos   |               |
-| POST   | /history | Add to the history of watched videos | {ytUrlSuffix} |
+| METHOD | ROUTE    | Description                          | REQUEST-BODY             |
+| ------ | -------- | ------------------------------------ | ------------------------ |
+| GET    | /history | Retrieve history of watched videos   |                          |
+| POST   | /history | Add to the history of watched videos | {title, videoId, author} |
