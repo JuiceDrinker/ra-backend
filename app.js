@@ -42,7 +42,6 @@ app.get("/history", async (req, res) => {
 app.post("/history", async (req, res) => {
   try {
     const { title, videoId, author } = req.body;
-    console.log("req.body :>> ", req.body);
     await History.create({
       title,
       videoId,
