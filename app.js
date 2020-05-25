@@ -32,7 +32,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //Routes
 app.get("/history", async (req, res) => {
   try {
-    const historyArr = await History.find();
+    const historyArr = await History.find().sort("-created_at"); //Return history with latest first
     res.json(historyArr);
   } catch (error) {
     console.log("error in GET", err); //TODO: Better error handling
