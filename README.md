@@ -1,5 +1,9 @@
 # Relief Applications Code Challenge
 
+## Instructions:
+
+Start MongoDB from terminal and then run the file via node/nodemon
+
 ## Front-end
 
 ### Components
